@@ -1,0 +1,58 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.pyc
+*.pyt
+*.pyw
+
+# Virtual environments
+.venv/
+env/
+ENV/
+venv/
+*.egg-info/
+
+# Django
+*.log
+*.pot
+*.pyc
+*.sqlite3
+db.sqlite3
+media/
+staticfiles/
+
+# VSCode
+.vscode/
+
+# macOS / Linux
+.DS_Store
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Docker
+*.pid
+*.seed
+*.tar
+*.log
+*.pid
+docker-compose.override.yml
+
+# Ignore env files (only if you store secrets here)
+.env
+
+# __pycache__ from subfolders
+**/__pycache__/
+
+# Migrations (optional: keep if you want to track migrations)
+*/migrations/__pycache__/
+*/migrations/*.pyc
+*/migrations/*.pyo
+*/migrations/*.pyd
+
+# Git
+.git/
