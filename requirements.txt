@@ -4,3 +4,6 @@ psycopg2-binary
 python-dotenv
 requests
 responses
+loguru
+django-redis
+redis
