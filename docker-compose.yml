@@ -1,4 +1,14 @@
+version: '3.8'
+
 services:
+  redis:
+    image: redis:7.2-alpine
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+    command: redis-server --appendonly yes
+
   web:
     build: .
     ports:
@@ -7,6 +17,7 @@ services:
       - .:/app
     depends_on:
       - db
+      - redis
     restart: on-failure
     environment:
       - DB_NAME=wishlist
@@ -14,6 +25,7 @@ services:
       - DB_PASSWORD=wishlistpass
       - DB_HOST=db
       - DB_PORT=5432
+      - API_PRODUCTS_URL=https://challenge-api.luizalabs.com
     command: >
       sh -c "python manage.py migrate &&
              python manage.py runserver 0.0.0.0:8000"
@@ -29,3 +41,4 @@ services:
 
 volumes:
   postgres_data:
+  redis_data:
