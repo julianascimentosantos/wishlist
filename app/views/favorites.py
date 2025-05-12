@@ -67,7 +67,7 @@ class FavoriteProductView(APIView):
             fav = FavoriteProduct.objects.filter(client=client, product_id=product_id).first()
 
             if not fav:
-                logger.warning(f"Product {product_id} not found in wishlist for client {client_id}")
+                logger.error(f"Product {product_id} not found in wishlist for client {client_id}")
                 return Response({"error": "Product not found in wishlist"}, status=404)
 
             fav.delete()

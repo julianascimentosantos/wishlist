@@ -7,3 +7,5 @@ responses
 loguru
 django-redis
 redis
+pytest==8.0.0
+pytest-django==4.7.0
